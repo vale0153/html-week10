@@ -110,18 +110,29 @@ nav ul{
 }
 
 main{
-	width:75%;
+	/*width:75%; */
+	flex-basis:0;
+	flex-grow:2;
 }
 
 aside{
-	width:25%;
+/*	width:25%; */
 	display:flex;
+	flex-basis:0;
+	flex-grow:1;
 	flex-direction: column-reverse;
 }
 
 aside .sidebarbox{
 	flex-basis:0;
 	flex-grow:1;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+aside .sidebarbox:nth-child(2){
+	order:1;
 }
 
 #fish{
@@ -146,3 +157,57 @@ aside .sidebarbox{
 	flex-grow:2;
 }	
 
+#rainbow #in{
+	flex-grow:4;
+	order: 1;
+}
+
+#rainbow #ye{
+	order:-1;
+}
+
+#content{
+	display:flex;
+}
+
+#content p:nth-child(1){ flex: 1 2 0;}
+#content p:nth-child(2){ flex: 1 1 0;}
+#content p:nth-child(3){ flex: 1 1 0;}
+#content p:nth-child(4){ flex: 1 5 0;}
+#content p:nth-child(5){ flex: 1 2 0;}
+
+/***********************************************************
+				Mobile Flexbox Example
+***********************************************************/
+
+.mobile-header{
+	background-color:grey;
+	width:100vw;
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+}
+
+.mobile-header div{
+	flex-basis:0;
+	flex-grow:1;
+
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+
+.mobile-header div:nth-child(1){background-image:url("../images/pancake-batfish.jpg");}
+.mobile-header div:nth-child(2){background-image:url("../images/barreleye-fish.jpg");}
+.mobile-header div:nth-child(3){background-image:url("../images/blobfish.jpg");}
+
+.mobile-header div span{
+	color:white;
+	font-weight:bold;
+	font-size:2rem;
+}
